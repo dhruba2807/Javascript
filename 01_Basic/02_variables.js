@@ -3,8 +3,8 @@ let  accountEmail = "sammydhruba@gmail.com"
 var accountpassword = "12345"
 
 
-accountCity = "Jaipur"
+// accountCity = "Jaipur"
 
-accountId = 2
+// accountId = 2
 
 console.log(accountId);
