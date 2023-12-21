@@ -1,10 +1,10 @@
 const accountId = 123456
 let  accountEmail = "sammydhruba@gmail.com"
-var accountpassword = "12345"
+var accountPassword = "12345"
 
 
-// accountCity = "Jaipur"
+accountCity = "Jaipur"
 
 // accountId = 2
 
-console.log(accountId);
+console.table([accountEmail,accountId,accountPassword,accountCity]);
