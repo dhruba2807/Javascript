@@ -9,14 +9,19 @@
                         BIGINIT
                         ex======*/
  const score = 100
+ console.log(typeof score)
 const scoreValue = 100.3
-
+console.log(typeof scoreValue )
 const isLoggedIn = false
+console.log(typeof isLoggedIn)
 const outsideTemp = null
+console.log(typeof outsideTemp)
 let userEmail;
 
 const id = Symbol('123')
 const anotherId = Symbol('123')
+console.log(typeof anotherId )
+
 
 console.log(id === anotherId);
      // **  JAVASCRIPT STATICALYY DEFINED **
@@ -26,13 +31,16 @@ console.log(id === anotherId);
             ARRAY,OBJECT,FUNCTION
           //  ex :-----
 const heros = ["shaktiman", "naagraj", "doga"];
+console.log(typeof heros)
 let myObj = {
     name: "hitesh",
     age: 22,
 }
+console.log(typeof myObj )
 const myFunction = function(){
     console.log("Hello world");
 }
+console.log(typeof myFunction)
 
 console.log(typeof anotherId);
 
