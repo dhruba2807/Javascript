@@ -59,3 +59,9 @@ console.log(typeof anotherId);
 // 14. Return "object".
 // */
 
+
+
+//   STACK(PREMITIVE)    , HEAP(NON-PREMITIVE)
+
+
+ 
