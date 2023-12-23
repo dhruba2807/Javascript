@@ -28,7 +28,7 @@ console.log(id === anotherId);
 
 
 //2.NOT PREMETIVE/REFERENCE => CALL BY REFERENCE()
-            ARRAY,OBJECT,FUNCTION
+            //  THERE ARE THREE TYPES :===>>>> ARRAY,OBJECT,FUNCTION
           //  ex :-----
 const heros = ["shaktiman", "naagraj", "doga"];
 console.log(typeof heros)
