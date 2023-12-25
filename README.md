@@ -1,2 +1,2 @@
 # Javascript
-Javascript Learn From Chai aur Code
+Javascript Learn From Youtube
