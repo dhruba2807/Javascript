@@ -1,0 +1,54 @@
+            //javascript execution contest
+        // {}  ===>>> Global execution contest
+            // 1.  Global Execution Context
+            //2.Function Execution Context
+            //3.Eval Execution Context
+
+            // [  {}  ] =
+            //         1. Memory execution phase
+            //         2.Execution phase
+
+let val1 = 10
+let val2 =5
+ function addnum(num1,num2){
+    let total = num1+num2
+    return total
+ }
+ let result1 = addnum(10,2)
+
+
+// THIS CODE FIRST ALLOCATE IN:--------
+ //        1. GLOBAL EXECUTION
+                    (THIS)
+
+//********THEN SECOND STEP***** */ THEN SECOND STEP
+
+                    // 2. Memory execution phase:----------( allocated variable type )
+                // VAL1 =UNDEFINED
+                // val2= undefined
+                // addnum = defination
+                // result1 = undefined
+                // result2 = undefined
+
+                //****Third Step******
+
+    // execution phase:----
+
+        // val1l1 =10
+        // val2 = 5
+        // addnum ===  [   /*create a new box[new variable environment + execution thread]  NEXT == ******then create a memory phase for function and allocate value type ***
+        //     val1 = undefined
+        //     val2 = undefined    
+        //     total = undefined
+        // // AND THEN EXECUTION CONTEXT 
+        //     ::: NUM1 =10
+        //         NUM2 =5
+//         TOTAL =15*/]
+
+
+
+
+
+
+
+            
