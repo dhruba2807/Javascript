@@ -15,7 +15,7 @@ switch (expression) {
 
 
 //   example
-  const foo = 0;
+  const fool = 0;
 switch (foo) {
   case -1:
     console.log("negative 1");
