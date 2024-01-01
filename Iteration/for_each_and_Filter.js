@@ -50,7 +50,7 @@ function logMapElements(value, key, map) {
 
 
 
-  const coding = ["js", "ruby", "java", "python", "cpp"]
+const coding = ["js", "ruby", "java", "python", "cpp"]
 
 
 
@@ -91,3 +91,63 @@ myCoding.forEach( (item) => {
     console.log(item.languageName);
     console.log(item.languageFileName);
 } )
+
+
+
+const values=coding.forEach((item)=>{
+    console.log(item);
+    return item
+})
+console.log(values);
+                    // ************FILTER****************
+// The filter() method of Array instances creates a shallow copy of a portion of a given array, filtered down to just the elements from the given array that pass the test implemented by the provided function.
+
+const words = ['spray', 'elite', 'exuberant', 'destruction', 'present'];
+
+const result = words.filter((word) => word.length > 6);
+
+console.log(result);
+// Expected output: Array ["exuberant", "destruction", "present"]
+
+
+//TWO DIFFERENT TYPE DECLARATION
+const myNums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+// const newNums = myNums.filter( (num) => {
+//     return num > 4           //THIS RETURN ALAWAYS WRITE 
+// } )
+
+// const newNums = []
+
+
+// myNums.forEach( (num) => {
+//     if (num > 4) { 
+//         newNums.push(num)
+//     }
+// } )
+
+// console.log(newNums);
+
+
+
+
+
+const books = [
+    { title: 'Book One', genre: 'Fiction', publish: 1981, edition: 2004 },
+    { title: 'Book Two', genre: 'Non-Fiction', publish: 1992, edition: 2008 },
+    { title: 'Book Three', genre: 'History', publish: 1999, edition: 2007 },
+    { title: 'Book Four', genre: 'Non-Fiction', publish: 1989, edition: 2010 },
+    { title: 'Book Five', genre: 'Science', publish: 2009, edition: 2014 },
+    { title: 'Book Six', genre: 'Fiction', publish: 1987, edition: 2010 },
+    { title: 'Book Seven', genre: 'History', publish: 1986, edition: 1996 },
+    { title: 'Book Eight', genre: 'Science', publish: 2011, edition: 2016 },
+    { title: 'Book Nine', genre: 'Non-Fiction', publish: 1981, edition: 1989 },
+];
+
+
+  let userBooks = books.filter( (bk) => bk.genre === 'History')
+
+  userBooks = books.filter( (bk) => { 
+    return bk.publish >= 1995 && bk.genre === "History"
+})
+  console.log(userBooks);
