@@ -36,6 +36,34 @@
 
     }
     addoptilanguage('Html')
+
+
+    //Edit
+    const secondlanguage = document.querySelector("li:nth-child(2)")
+    //secondlanguage.innerHTML="MOJO"
+
+    const newli = document.createElement('li')
+    newli.textContent = "MOjo"
+
+
+    //replace the value 
+    secondlanguage.replaceWith(newli)
+
+    //edit
+    const firstlanguage = document.querySelector("li:first-child")
+
+    firstlanguage.outerHTML = '<li>Typescript</li>'
+
+
+
+    //Remove
+
+
+    const lastlang = document.querySelector('li:last-child')
+    lastlang.remove()
+
+// THE END OF JS DOM
+
 </script>
 
 </html>
