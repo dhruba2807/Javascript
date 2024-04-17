@@ -1,0 +1,21 @@
+body{
+    background-image:url(https://t4.ftcdn.net/jpg/07/13/99/31/360_F_713993104_InGjJMQEuu38vTlxF93TvRK4PTSebCyD.jpg);
+    color:white;
+    
+}
+.center{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+#clock{
+    font-size: 20px;
+    background:linear-gradient(135deg,orange 60%,cyan);
+    padding: 10px 20px 10px;
+    margin-top: 2px;
+    margin-left: 20px;
+    border-radius: 2px;
+}
