@@ -61,3 +61,39 @@ document.addEventListener("mousemove", myFunction);
 document.removeEventListener("mousemove", myFunction);
 
 
+let parase = document.getElementById('paras');
+
+for(let i = 0; i<parase.length; i++){
+   let para = parase[i];
+   para.addEventListener('click',function(){
+      alert("You have Clicked on Para: " + (i+1));
+
+   })
+}
+
+
+
+
+
+
+
+
+    // document.getElementById('google').addEventListener('click',function(e){
+    //     e.preventDefault();
+    //     e.stopPropagation()
+    //     console.log("google clicked");
+    // }, false)
+   
+                        //REMOVE THE IMAGE 
+   document.querySelector('#images').addEventListener('click', function(e){
+      console.log(e.target.tagName);
+      if (e.target.tagName === 'IMG') {
+         console.log(e.target.id);
+         let removeIt = e.target.parentNode
+         removeIt.remove()
+         //ANOTHER APPROACH
+             //removeIt.parentNode.removeChild(removeIt)
+      }
+   });
+
+   
