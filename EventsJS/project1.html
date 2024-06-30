@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Dhurba Mondal</h1>
+    <button id="btn">Button </button>
+</body>
+<script>
+    const changetext = function () {
+        document.querySelector('h1').innerHTML = "Learning Javacript"
+    }
+
+    const change = setTimeout(changetext, 2000)
+
+    document.querySelector("#btn").addEventListener('click', function () {
+        clearTimeout(change)
+        console.log("stopped")
+    })
+
+
+
+</script>
+
+</html>
