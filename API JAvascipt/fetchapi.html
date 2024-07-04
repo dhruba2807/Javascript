@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+</head>
+
+<body>
+        <h1>HI THIS IS API</h1>
+        <H1>THERE ARE FOUR METHOD IS API GET, POST, PUT, DELETE</H1>
+</body>
+<script>
+
+        const url = "https://catfact.ninja/fact";
+        const h1 = document.querySelector("h1");
+
+        const fetchdata = () => {
+                fetch(url)
+
+                        // .then((data) =>{
+                        //     console.log(data);
+
+                        // });
+
+                        .then((response) => {
+                                return response.json();
+
+                        })
+                        .then((data) => {
+                                h1.innerText = data.fact;
+                        });
+
+        };
+        fetchdata();
+
+
+</script>
+
+</html>
