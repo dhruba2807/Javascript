@@ -135,12 +135,13 @@
         });
     };
 
-
     const animateAll = (animate) => {
         animateone(fruits[0], animate)
-            .then(() => animateone(fruits[1], animate));
-        .catch((error) => console.log("Some Error Occcured"));
+            .then(() => animateone(fruits[1], animate))
+            .then(() => animateone(fruits[2], animate))
+            .catch((error) => console.log("Some Error Occured"));
     };
+
 
     const animate = (fruit) => {
         console.log("animating", fruit);
