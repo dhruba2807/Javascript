@@ -38,7 +38,114 @@
         </span>
         </B>
         </P>
+        <h1>The finally() method of Promise instances schedules a function to be called when the promise is settled
+            (either fulfilled or rejected). It immediately returns another Promise object, allowing you to chain calls
+            to other promise methods.</h1>
+        <h1>The catch() method of Promise instances schedules a function to be called when the promise is rejected. It
+            immediately returns another Promise object, allowing you to chain calls to other promise methods. It is a
+            shortcut for Promise.prototype.then(undefined, onRejected).</h1>
+        <h1>The then() method of Promise instances takes up to two arguments: callback functions for the fulfilled and
+            rejected cases of the Promise. It immediately returns another Promise object, allowing you to chain calls to
+            other promise methods.</h1>
+
+        <h1>Example Of Catch</h1>
+        <p>const promise1 = new Promise((resolve, reject) => {
+            throw new Error('Uh-oh!');
+            });
+
+            promise1.catch((error) => {
+            console.error(error);
+            });
+            // Expected output: Error: Uh-oh!
+        </p>
+        <h1>Example Of finally</h1>
+        <p>function checkMail() {
+            return new Promise((resolve, reject) => {
+            if (Math.random() > 0.5) {
+            resolve('Mail has arrived');
+            } else {
+            reject(new Error('Failed to arrive'));
+            }
+            });
+            }
+
+            checkMail()
+            .then((mail) => {
+            console.log(mail);
+            })
+            .catch((err) => {
+            console.error(err);
+            })
+            .finally(() => {
+            console.log('Experiment completed');
+            });</p>
+        <p>Example Of Then</p>
+        <h1>const promise1 = new Promise((resolve, reject) => {
+            resolve('Success!');
+            });
+
+            promise1.then((value) => {
+            console.log(value);
+            // Expected output: "Success!"
+            });
+        </h1>
     </div>
 </body>
+<script>
+    const promiseone = new Promise(function (resolve, reject) {
+        setTimeout(function () {
+            console.log("Async task Is a Computer");
+            resolve();
+
+        }, 1000)
+    });
+
+
+
+
+    promiseone.then(function () {
+        console.log("Hello Run");
+    });
+
+
+
+
+
+
+    new Promise(function (resolve, reject) {
+        setTimeout(function () {
+            console.log("Hello ");
+            resolve()
+        }, 1000)
+    }).then(function () {
+        console.log("Resolved")
+    });
+
+
+
+    let fruits = ["Apple", "Banana", "Stwabery"];
+
+    const animateone = (fruit, animate) => {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                animate(fruit);
+                resolve(true);
+
+            }, 1000)
+        });
+    };
+
+
+    const animateAll = (animate) => {
+        animateone(fruits[0], animate)
+            .then(() => animateone(fruits[1], animate));
+        .catch((error) => console.log("Some Error Occcured"));
+    };
+
+    const animate = (fruit) => {
+        console.log("animating", fruit);
+    }
+
+</script>
 
 </html>
