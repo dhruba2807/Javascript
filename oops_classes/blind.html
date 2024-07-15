@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blind
+
+    </title>
+</head>
+<body>
+    <p>The bind() method creates a new function that, when called, has its this keyword set to the provided value. This is particularly useful for preserving the context in callbacks.</p>
+</body>
+<div>
+    <button>Clicked Me</button>
+</div>
+<script>
+class React {
+        constructor(){
+            this.library = "React"
+            this.server = "https://localhost:300"
+
+            //requirement
+            document
+                .querySelector('button')
+                .addEventListener('click', this.handleClick.bind(this))
+                //document.querySelector('button').addEventListener('click', this.handleClick.bind(this)):
+// Selects the button element in the document.
+// Adds a click event listener to the button.
+// Uses bind(this) to ensure that the this context inside the handleClick method refers to the instance of the React class, not the button element.
+
+//bind
+        }
+        handleClick(){
+            console.log("button clicked");
+        //   handleClick(): Defines the method that is called when the button is clicked.
+        //   console.log("button clicked"): Logs "button clicked" to the console.
+        //   console.log(this.server): Logs the value of this.server (which is "https://localhost:300") to the console.
+            console.log(this.server);
+        }
+    }
+
+    const app = new React()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Person {
+    constructor(name) {
+        this.name = name;
+    }
+
+    greet() {
+        console.log(`Hello, my name is ${this.name}`);
+    }
+
+    delayedGreet() {
+        setTimeout(this.greet.bind(this), 1000);
+    }
+}
+//The Person class has a greet method that logs a greeting message using this.name.
+//The delayedGreet method uses setTimeout to call greet after a delay.
+//Without bind(this), this inside greet would be undefined because setTimeout changes the context.
+//By using bind(this), we ensure that greet is called with the correct context (john).
+
+const john = new Person("John");
+john.delayedGreet(); // "Hello, my name is John" after 1 second
+
+///Using Arrow Function
+class Person {
+    constructor(name) {
+        this.name = name;
+    }
+
+    greet = () => {
+        console.log(`Hello, my name is ${this.name}`);
+    }
+
+    delayedGreet() {
+        setTimeout(this.greet, 1000);
+    }
+}
+// The bind() method is used to set the this context for functions, which is useful in callbacks and event handlers.
+// Arrow functions can also be used to maintain the this context because they inherit it from the surrounding lexical scope.
+// Understanding and controlling the this context is crucial for writing effective and bug-free JavaScript code.
+
+const john1 = new Person("John");
+john.delayedGreet(); // "Hello, my name is John" after 1 second
+
+</script>
+</html>
