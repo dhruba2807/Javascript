@@ -12,7 +12,7 @@ class User {
     }
 
     get password(){
-        return `${this._password}hitesh`
+        return `${this._password}dhruba`
     }
 
     set password(value){
@@ -20,8 +20,8 @@ class User {
     }
 }
 
-const hitesh = new User("h@hitesh.ai", "abc")
-console.log(hitesh.email);
+const dhruba = new User("h@dhruba.ai", "abc")
+console.log(dhruba.email);
 
 
 
