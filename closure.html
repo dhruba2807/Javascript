@@ -6,69 +6,81 @@
     <title>Closure aur chai</title>
 </head>
 <body style="background-color: #313131;">
+    <!-- Two buttons with IDs for changing background color -->
     <button id="orange">Orange</button>
     <button id="green">Green</button>
 </body>
 
-    <script>
-    // function init() {
-    //     let name = "Mozilla"; 
-    //     function displayName() {
-    //         console.log(name); 
-    //     }
-    //     displayName();
-    // }
-    // init();
-
-    // function outer(){
-    //     let username = "hitesh"
-    //     console.log("OUTER", secret);
-    //     function inner(){
-    //         let secret = "my123"
-    //         console.log("inner", username);
-    //     }
-    //     function innerTwo(){
-    //         console.log("innerTwo", username);
-    //         console.log(secret);
-    //     }
-    //     inner()
-    //     innerTwo()
-
-    // }
-    // outer()
-    // console.log("TOO OUTER", username);
-
-
-    // function makeFunc() {
-    //     const name = "Mozilla";
-    //     function displayName() {
-    //         console.log(name);
-    //     }
-    //     return displayName;
-    // }
-
-    // const myFunc = makeFunc();
-    // myFunc();
-
-    </script>
-    <script>
-        // document.getElementById("orange").onclick = function(){
-        //     document.body.style.backgroundColor = `orange`
-        // }
-        // document.getElementById("green").onclick = function(){
-        //     document.body.style.backgroundColor = `green`
-        // }
-
-        function clickHandler(color){
-            // document.body.style.backgroundColor = `${color}`
-
-            return function(){
-                document.body.style.backgroundColor = `${color}`
-            }
+<script>
+    // Example 1: Simple closure demonstration
+    /*
+    function init() {
+        let name = "Mozilla"; // Local variable created in init
+        function displayName() { // Inner function, a closure
+            console.log(name); // Accessing variable declared in the outer function
         }
+        displayName(); // Calling the inner function
+    }
+    init(); // Calling the outer function
+    */
 
-        document.getElementById('orange').onclick = clickHandler("orange")
-        document.getElementById('green').onclick = clickHandler("green")
+    // Example 2: Nested functions with closure
+    /*
+    function outer(){
+        let username = "hitesh"; // Local variable in the outer function
+        // Uncommenting the next line will cause an error because 'secret' is not defined in this scope
+        // console.log("OUTER", secret);
+        function inner(){
+            let secret = "my123"; // Local variable in the inner function
+            console.log("inner", username); // Accessing outer function's variable
+        }
+        function innerTwo(){
+            console.log("innerTwo", username); // Accessing outer function's variable
+            // Uncommenting the next line will cause an error because 'secret' is not defined in this scope
+            // console.log(secret);
+        }
+        inner(); // Calling the first inner function
+        innerTwo(); // Calling the second inner function
+    }
+    outer(); // Calling the outer function
+    // Uncommenting the next line will cause an error because 'username' is not defined in the global scope
+    // console.log("TOO OUTER", username);
+    */
 
-    </script>
+    // Example 3: Returning a function (closure)
+    /*
+    function makeFunc() {
+        const name = "Mozilla"; // Local variable in the outer function
+        function displayName() { // Inner function, a closure
+            console.log(name); // Accessing outer function's variable
+        }
+        return displayName; // Returning the inner function
+    }
+
+    const myFunc = makeFunc(); // Assigning the returned function to a variable
+    myFunc(); // Calling the inner function, which retains access to the outer function's variable
+    */
+
+</script>
+
+<script>
+    // Using closures to handle button click events
+
+    // Function that takes a color and returns a function that changes the background color
+    function clickHandler(color){
+        return function(){ // This returned function is a closure
+            document.body.style.backgroundColor = `${color}`; // Accesses the 'color' parameter from the outer function
+        }
+    }
+
+    // Setting the onclick event for the 'orange' button
+    document.getElementById('orange').onclick = clickHandler("orange");
+    // Setting the onclick event for the 'green' button
+    document.getElementById('green').onclick = clickHandler("green");
+
+    // Explanation of the clickHandler function:
+    // The clickHandler function creates and returns an anonymous function (closure)
+    // that captures the 'color' parameter. When the returned function is called
+    // (when a button is clicked), it changes the body's background color to the specified 'color'.
+</script>
 </html>
